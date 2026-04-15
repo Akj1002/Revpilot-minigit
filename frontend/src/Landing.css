@@ -1,0 +1,321 @@
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: #010409 !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    scroll-behavior: smooth;
+}
+
+.nextgen-landing {
+    background-color: #010409;
+    color: #ffffff;
+    width: 100%; 
+    min-height: 100vh;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    overflow: visible !important; 
+}
+
+/* Background Grid */
+.nextgen-landing::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.glow-orb {
+    position: fixed;
+    top: -150px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    height: 600px;
+    background: radial-gradient(ellipse at center, rgba(163, 113, 247, 0.15) 0%, rgba(47, 129, 247, 0.05) 50%, transparent 80%);
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- SLIM NAVBAR --- */
+.ng-nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px 20px; /* Slimmer top spacing */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.ng-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    height: 56px; /* Forces the height to stay slim */
+    background: rgba(13, 17, 23, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 0 24px; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.ng-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.ng-nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.ng-nav-links span {
+    font-size: 0.8rem;
+    color: #8b949e;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.ng-nav-links span:hover, .active-nav-link { 
+    color: #fff !important; 
+}
+
+/* --- THE FIX: FORCED HORIZONTAL AUTH WRAPPER --- */
+.ng-auth-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 12px !important;
+    height: 100%;
+    white-space: nowrap !important;
+}
+
+.ng-btn-login {
+    background: transparent !important;
+    color: #8b949e !important;
+    border: none !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: color 0.2s;
+}
+
+.ng-btn-login:hover { color: #fff !important; }
+
+.ng-btn-signup {
+    background: #ffffff !important;
+    color: #000000 !important;
+    padding: 8px 20px !important; /* Slimmer button */
+    border-radius: 100px !important;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: none !important;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ng-btn-signup:hover { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 20px rgba(163, 113, 247, 0.4);
+}
+
+/* --- HERO SECTION --- */
+.ng-hero {
+    position: relative;
+    z-index: 10;
+    padding: 160px 24px 80px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.ng-badge {
+    padding: 6px 16px;
+    background: rgba(163, 113, 247, 0.1);
+    border: 1px solid rgba(163, 113, 247, 0.3);
+    border-radius: 100px;
+    color: #a371f7;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ng-title {
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+    max-width: 1000px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff 50%, #8b949e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ng-title-accent {
+    background: linear-gradient(to right, #2f81f7, #a371f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ng-subtitle {
+    font-size: 1.1rem;
+    color: #8b949e;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.ng-hero-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 80px;
+}
+
+.ng-btn-primary {
+    background: linear-gradient(135deg, #2f81f7, #1f6feb);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 10px 30px rgba(47, 129, 247, 0.2);
+}
+
+.ng-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+/* --- MOCK EDITOR --- */
+.ng-mock-editor {
+    width: 100%;
+    max-width: 1000px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+
+.ng-mock-header {
+    height: 40px;
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+}
+
+.ng-mock-dot { 
+    width: 10px; 
+    height: 10px; 
+    border-radius: 50%; 
+}
+
+.ng-mock-code {
+    padding: 32px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* --- FEATURES GRID --- */
+.ng-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 24px 120px;
+    z-index: 10;
+}
+
+.ng-feature-card {
+    background: rgba(13, 17, 23, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.ng-feature-card:hover {
+    background: rgba(163, 113, 247, 0.03);
+    border-color: rgba(163, 113, 247, 0.3);
+    transform: translateY(-8px);
+}
+
+.ng-feature-card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.3rem;
+    color: #f0f6fc;
+}
+
+.ng-feature-card p {
+    color: #8b949e;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* --- FOOTER --- */
+.ng-footer {
+    width: 100%;
+    padding: 60px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    color: #484f58;
+    z-index: 10;
+}
+
+/* --- CODE COLORS --- */
+.code-keyword { color: #ff7b72; }
+.code-func { color: #d2a8ff; }
+.code-string { color: #a5d6ff; }
+.code-comment { color: #8b949e; }
