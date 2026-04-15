@@ -1,6 +1,14 @@
+# Root ignore
 node_modules/
 .env
-frontend/node_modules/
+
+# Specific folder ignores
+backend/.env
 backend/node_modules/
+frontend/.env
+frontend/node_modules/
+
+# OS/IDE files
 .DS_Store
 dist/
+build/
